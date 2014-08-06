@@ -38,7 +38,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, fmt.Sprintf("%s", err), 500)
 	} else {
-		status = *assetsDir + "/" + status + ".png"
+		status = *assetsDir + "/" + status + ".svg"
 		http.ServeFile(w, r, status)
 	}
 
