@@ -39,6 +39,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, fmt.Sprintf("%s", err), 500)
 	} else {
 		status = *assetsDir + "/" + status + ".svg"
+		w.Header().Set("Content-Type", "image/svg+xml")
 		http.ServeFile(w, r, status)
 	}
 
